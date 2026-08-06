@@ -57,7 +57,12 @@ def handler(job):
   batch_size = job_input.get("batch_size", 8)
 
   if not script_json or not anchor_text or not anchor_wav_base64:
-    return {"error": "Missing required parameters: script_json, anchor_text, or anchor_wav_base64"}
+    return {
+        "error": (
+            "Missing required parameters: script_json, anchor_text, or"
+            " anchor_wav_base64"
+        )
+    }
 
   anchor_path = "/tmp/anchor.wav"
 
